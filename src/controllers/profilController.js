@@ -1,8 +1,8 @@
 const uuidv4 = require('uuid/v4')
 const models = require('./../models')
 
-exports.getSkills = function(req, res) {
-    models.Skill.findAll()
+exports.getProfils = function(req, res) {
+    models.Profil.findAll()
     .then(result => {
         res.status(200).json(result);
     })
@@ -13,8 +13,8 @@ exports.getSkills = function(req, res) {
     })
 }
 
-exports.getSkill = function(req, res) {
-    models.Skill.findOne({ 
+exports.getProfil = function(req, res) {
+    models.Profil.findOne({ 
         where: { 
             uuid: req.params.id 
         } 
@@ -35,13 +35,16 @@ exports.getSkill = function(req, res) {
     })
 }
 
-exports.createSkill = function(req, res) {
-    models.Skill.create({
+exports.createProfil = function(req, res) {
+    models.Profil.create({
         uuid: uuidv4(),
-        profilId: req.body.profilId,
-        technologyId: req.body.technologyId,
-        name: req.body.name,
-        content: req.body.content,
+        userId: req.body.userId,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        locationId: req.body.locationId,
+        job: req.body.job,
+        birth: req.body.birth,
+        description: req.body.description,
         illustrationUrl: req.body.illustrationUrl,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -56,12 +59,15 @@ exports.createSkill = function(req, res) {
     })
 }
 
-exports.updateSkill = function(req, res) {
-    models.Skill.update({
-        profilId: req.body.profilId,
-        technologyId: req.body.technologyId,
-        name: req.body.name,
-        content: req.body.content,
+exports.updateProfil = function(req, res) {
+    models.Profil.update({
+        userId: req.body.userId,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        locationId: req.body.locationId,
+        job: req.body.job,
+        birth: req.body.birth,
+        description: req.body.description,
         illustrationUrl: req.body.illustrationUrl,
         updatedAt: new Date()
     },
@@ -80,8 +86,8 @@ exports.updateSkill = function(req, res) {
     })
 }
 
-exports.deleteSkill = function(req, res) {
-    models.Skill.destroy({
+exports.deleteProfil = function(req, res) {
+    models.Profil.destroy({
         where: {
           uuid: req.params.id
         }

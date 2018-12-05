@@ -7,8 +7,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.UUID
       },
+      title: {
+        type: Sequelize.STRING
+      },
       type: {
         type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.TEXT
       },
       startedAt: {
         type: Sequelize.DATE
@@ -16,19 +22,16 @@ module.exports = {
       finishedAt: {
         type: Sequelize.DATE
       },
-      title: {
-        type: Sequelize.STRING
-      },
-      idUser: {
+      profilId: {
         allowNull: false,
         type: Sequelize.UUID,
         foreignKey: true,
         references: {
-          model: 'Users',
+          model: 'Profils',
           key: 'uuid'
         }
       },
-      idLocation: {
+      locationId: {
         allowNull: false,
         type: Sequelize.UUID,
         foreignKey: true,
@@ -37,13 +40,10 @@ module.exports = {
           key: 'uuid'
         }
       },
-      description: {
-        type: Sequelize.TEXT
-      },
-      urlLogo: {
+      logoUrl: {
         type: Sequelize.STRING
       },
-      urlLink: {
+      linkUrl: {
         type: Sequelize.STRING
       },
       createdAt: {

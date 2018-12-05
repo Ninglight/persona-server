@@ -7,16 +7,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.UUID
       },
-      idUser: {
+      profilId: {
         allowNull: false,
         type: Sequelize.UUID,
         foreignKey: true,
         references: {
-          model: 'Users',
+          model: 'Profils',
           key: 'uuid'
         }
       },
-      idTechnology: {
+      technologyId: {
         allowNull: false,
         type: Sequelize.UUID,
         foreignKey: true,
@@ -31,7 +31,7 @@ module.exports = {
       content: {
         type: Sequelize.TEXT
       },
-      urlIllustration: {
+      illustrationUrl: {
         type: Sequelize.STRING
       },
       createdAt: {

@@ -7,13 +7,13 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV4,
     },
     type: DataTypes.STRING,
-    idUser: DataTypes.INTEGER,
-    urlStorage: DataTypes.STRING
+    profilId: DataTypes.UUID,
+    storageUrl: DataTypes.STRING
   }, {});
   File.associate = function(models) {
     models.File.belongsTo(models.User, {
       onDelete: "CASCADE",
-      foreignKey: 'idUser'
+      foreignKey: 'profilId'
     });
   };
   return File;

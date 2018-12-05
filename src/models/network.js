@@ -7,14 +7,14 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
     },
-    idUser: DataTypes.INTEGER,
-    socialNetwork: DataTypes.STRING,
-    urlLink: DataTypes.STRING
+    profilId: DataTypes.UUID,
+    type: DataTypes.STRING,
+    linkUrl: DataTypes.STRING
   }, {});
   Network.associate = function(models) {
-    models.Network.belongsTo(models.User, {
+    models.Network.belongsTo(models.Profil, {
       onDelete: "CASCADE",
-      foreignKey: 'idUser'
+      foreignKey: 'profilId'
     });
   };
   return Network;

@@ -5,7 +5,7 @@ const uuidv4 = require("uuid/v4");
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Locations', [{
-      uuid: '12345',
+      uuid: uuidv4(),
       name: 'Valentin Bourreau',
       adress: '1 impasse de la calypso',
       complement: null,

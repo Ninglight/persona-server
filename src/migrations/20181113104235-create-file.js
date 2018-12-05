@@ -11,16 +11,16 @@ module.exports = {
       type: {
         type: Sequelize.STRING
       },
-      idUser: {
+      profilId: {
         allowNull: false,
         type: Sequelize.UUID,
         foreignKey: true,
         references: {
-          model: 'Users',
+          model: 'Profils',
           key: 'uuid'
         }
       },
-      urlStorage: {
+      storageUrl: {
         type: Sequelize.STRING
       },
       createdAt: {

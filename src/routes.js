@@ -6,6 +6,7 @@ const ExperienceController = require('./controllers/experienceController')
 const FileController = require('./controllers/fileController')
 const LocationController = require('./controllers/locationController')
 const NetworkController = require('./controllers/networkController')
+const ProfilController = require('./controllers/profilController')
 const SkillController = require('./controllers/skillController')
 const TechnologyController = require('./controllers/technologyController')
 const UserController = require('./controllers/userController')
@@ -58,6 +59,16 @@ router.route(`${path}/network/:id`)
   .get(NetworkController.getNetwork)
   .put(NetworkController.updateNetwork)
   .delete(NetworkController.deleteNetwork)
+
+// Profil router
+router.route(`${path}/profils`)
+  .get(ProfilController.getProfils)
+  .post(ProfilController.createProfil)
+
+router.route(`${path}/profil/:id`)
+  .get(ProfilController.getProfil)
+  .put(ProfilController.updateProfil)
+  .delete(ProfilController.deleteProfil)
 
 // Skill router
 router.route(`${path}/skills`)

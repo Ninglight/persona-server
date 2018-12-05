@@ -39,8 +39,8 @@ exports.createFile = function(req, res) {
     models.File.create({
         uuid: uuidv4(),
         type: req.body.type,
-        idUser: req.body.idUser,
-        urlStorage: req.body.urlStorage,
+        profilId: req.body.profilId,
+        storageUrl: req.body.storageUrl,
         createdAt: new Date(),
         updatedAt: new Date()
     })
@@ -57,8 +57,8 @@ exports.createFile = function(req, res) {
 exports.updateFile = function(req, res) {
     models.File.update({
         type: req.body.type,
-        idUser: req.body.idUser,
-        urlStorage: req.body.urlStorage,
+        profilId: req.body.profilId,
+        storageUrl: req.body.storageUrl,
         updatedAt: new Date()
     },
     {

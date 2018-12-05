@@ -1,25 +1,23 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Networks', {
+    return queryInterface.createTable('Users', {
       uuid: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.UUID
-      },
-      profilId: {
-        allowNull: false,
         type: Sequelize.UUID,
-        foreignKey: true,
-        references: {
-          model: 'Profils',
-          key: 'uuid'
-        }
       },
-      type: {
+      username: {
+        allowNull: false,
         type: Sequelize.STRING
       },
-      linkUrl: {
+      email: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
+      refreshToken: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -30,11 +28,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+    }, {
+      
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Networks');
+    return queryInterface.dropTable('Users');
   }
 };
-
-// Définir les constantes pour les réseaux sociaux : Dribbble, Instagram, Behance

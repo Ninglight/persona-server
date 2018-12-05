@@ -1,5 +1,6 @@
 const uuidv4 = require('uuid/v4')
 const models = require('./../models')
+const bcrypt = require('bcrypt')
 
 exports.getUsers = function(req, res) {
     models.User.findAll()
@@ -39,15 +40,9 @@ exports.createUser = function(req, res) {
     models.User.create({
         uuid: uuidv4(),
         username: req.body.username,
-        // password: bcrypt.hashSync("password", 10),
-        password: req.body.password,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        idLocation: req.body.idLocation,
         email: req.body.email,
-        birth: req.body.birth,
-        description: req.body.description,
-        urlIllustration: req.body.urlIllustration,
+        password: bcrypt.hashSync(req.body.password, 10),
+        refreshToken: req.body.refreshToken,
         createdAt: new Date(),
         updatedAt: new Date()
     })

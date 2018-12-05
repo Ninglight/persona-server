@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV4,
     },
     name: DataTypes.STRING,
-    urlLogo: DataTypes.STRING,
+    logoUrl: DataTypes.STRING,
     type: DataTypes.STRING
   }, {});
   Technology.associate = function(models) {
-    models.Technology.hasMany(models.Skill);
+
   };
   return Technology;
 };

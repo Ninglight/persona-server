@@ -6,20 +6,20 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
     },
-    idUser: DataTypes.INTEGER,
-    idTechnology: DataTypes.INTEGER,
+    profilId: DataTypes.UUID,
+    technologyId: DataTypes.UUID,
     name: DataTypes.STRING,
     content: DataTypes.TEXT,
-    urlIllustration: DataTypes.STRING
+    illustrationUrl: DataTypes.STRING
   }, {});
   Skill.associate = function(models) {
-    models.Skill.belongsTo(models.User, {
+    models.Skill.belongsTo(models.Profil, {
       onDelete: "CASCADE",
-      foreignKey: 'idUser'
+      foreignKey: 'profilId'
     });
     models.Skill.belongsTo(models.Technology, {
       onDelete: "CASCADE",
-      foreignKey: 'idTechnology'
+      foreignKey: 'technologyId'
     });
   };
   return Skill;

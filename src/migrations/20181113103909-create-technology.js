@@ -10,7 +10,7 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      urlLogo: {
+      logoUrl: {
         type: Sequelize.STRING
       },
       type: {
