@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Networks', {
@@ -30,11 +30,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Networks');
+    return queryInterface.dropTable('Networks')
   }
-};
+}
 
 // Définir les constantes pour les réseaux sociaux : Dribbble, Instagram, Behance

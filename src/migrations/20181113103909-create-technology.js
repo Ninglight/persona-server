@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Technologies', {
@@ -24,11 +24,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Technologies');
+    return queryInterface.dropTable('Technologies')
   }
-};
+}
 
 // Définir constante pour le type : Front, Graphisme, Back, Ops

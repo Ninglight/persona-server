@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Experiences', {
@@ -54,11 +54,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Experiences');
+    return queryInterface.dropTable('Experiences')
   }
-};
+}
 
 // Définir les types d'experiences : Apprentissage, Études, Projets, Personnel

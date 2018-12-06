@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 module.exports = (sequelize, DataTypes) => {
   const Profil = sequelize.define('Profil', {
     uuid: {
       type: DataTypes.UUID,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
+      defaultValue: DataTypes.UUIDV4
     },
     userId: DataTypes.UUID,
     firstName: DataTypes.STRING,
@@ -14,16 +14,16 @@ module.exports = (sequelize, DataTypes) => {
     birth: DataTypes.DATE,
     description: DataTypes.TEXT,
     illustrationUrl: DataTypes.STRING
-  }, {});
-  Profil.associate = function(models) {
+  }, {})
+  Profil.associate = function (models) {
     models.Profil.belongsTo(models.Location, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'locationId'
-    });
+    })
     models.Profil.belongsTo(models.User, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'userId'
-    });
-  };
-  return Profil;
-};
+    })
+  }
+  return Profil
+}

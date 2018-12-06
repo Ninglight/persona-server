@@ -1,5 +1,5 @@
-var express = require('express');
-var router  = express.Router();
+var express = require('express')
+var router = express.Router()
 
 // Import routes
 const ExperienceController = require('./controllers/experienceController')
@@ -14,11 +14,11 @@ const UserController = require('./controllers/userController')
 const path = '/api'
 
 // Global router
-router.get(`${path}`, function(req, res) {
+router.get(`${path}`, function (req, res) {
   res.render('index', {
-    title: 'Sequelize: Express Example',
-  });
-});
+    title: 'Sequelize: Express Example'
+  })
+})
 
 // Experience router
 router.route(`${path}/experiences`)
@@ -100,5 +100,4 @@ router.route(`${path}/user/:id`)
   .put(UserController.updateUser)
   .delete(UserController.deleteUser)
 
-
-module.exports = router;
+module.exports = router

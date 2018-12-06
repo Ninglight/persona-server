@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 module.exports = (sequelize, DataTypes) => {
   const Experience = sequelize.define('Experience', {
     uuid: {
       type: DataTypes.UUID,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
+      defaultValue: DataTypes.UUIDV4
     },
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
@@ -15,16 +15,16 @@ module.exports = (sequelize, DataTypes) => {
     locationId: DataTypes.UUID,
     logoUrl: DataTypes.STRING,
     linkUrl: DataTypes.STRING
-  }, {});
-  Experience.associate = function(models) {
+  }, {})
+  Experience.associate = function (models) {
     models.Experience.belongsTo(models.Location, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'locationId'
-    });
+    })
     models.Experience.belongsTo(models.Profil, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'profilId'
-    });
-  };
-  return Experience;
-};
+    })
+  }
+  return Experience
+}

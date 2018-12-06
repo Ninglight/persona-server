@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
-const uuidv4 = require("uuid/v4");
+const uuidv4 = require('uuid/v4')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -14,10 +14,10 @@ module.exports = {
       country: 'France',
       createdAt: new Date(),
       updatedAt: new Date()
-    }], {});
+    }], {})
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Locations', null, {});
+    return queryInterface.bulkDelete('Locations', null, {})
   }
-};
+}
