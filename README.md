@@ -25,9 +25,23 @@ For undoing seeds, you can execute the following command :
 sequelize db:seed:undo:all
 ```
 
+### Endpoints
+
+On the server we now have the following controllers and endpoints:
+
+Controller | Endpoint | Description
+-----------|----------|------------
+userResource.create | POST /users | Create a user
+userResource.list | GET /users  | Get a listing of users
+userResource.read | GET /users/:id | Get details about a user
+userResource.update | PUT /users/:id | Update a user
+userResource.delete | DELETE /users/:id | Delete a user
+
 ## Docs
 
+- [Yarn](https://yarnpkg.com/en/docs)
 - [Express](http://expressjs.com/)
 - [Sequelize](http://docs.sequelizejs.com/)
-- [Nunjucks](https://pugjs.org/api/getting-started.html)
+- [Epilogue](https://github.com/dchester/epilogue)
+- [Pug](https://pugjs.org/api/getting-started.html)
 
